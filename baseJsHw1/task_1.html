@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+        let userData = prompt("Введите температуру по Цельсию: ");
+        let tempFarenheit = (9 / 5) * userData + 32;
+        let resultTxt = "";
+
+        if (userData % 10 == 0 || 4 < userData % 10) {
+            resultTxt = resultTxt + userData + " градусов по Цельсию соответствуют ";
+        } else if (userData % 10 == 1) {
+            resultTxt = resultTxt + userData + " градус по Цельсию соответствует ";
+        } else if (1 < userData % 10 < 5) {
+            resultTxt = resultTxt + userData + " градуса по Цельсию соответствуют ";
+        }
+
+        if (tempFarenheit % 10 == 1) {
+            resultTxt = resultTxt + tempFarenheit + " градусу по Фаренгейту.";
+        } else {
+            resultTxt = resultTxt + tempFarenheit + " градусам по Фаренгейту."
+        }
+
+        alert(resultTxt)
+        //Добавил немного ветвления для красивого вывода.
+        
+    </script>
+
+</body>
+
+</html>
