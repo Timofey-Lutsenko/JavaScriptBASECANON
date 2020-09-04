@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+        let userData = prompt("Укажиту сумму пополнения счета: ");
+        let lastNum = userData % 10;
+        switch (lastNum) {
+            case 1:
+                alert("Ваша сумма в " + userData + " рубль успешно зачислена.");
+                break;
+            case 0:
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+                alert("Ваша сумма в " + userData + " рублей успешно зачислена.");
+                break;
+            case 2:
+            case 3:
+            case 4:
+                alert("Ваша сумма в " + userData + " рубля успешно зачислена.");
+                break;
+        }
+
+    </script>
+</body>
+
+</html>

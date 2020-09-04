@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+        /*
+         *The function calculates the sum of the parameters.
+         * @param {number} a 1 argument.
+         * @param {number} b 2 argument.
+         * @returns {number} the function returns the sum of the arguments * a and b.
+         */
+        function addition(a, b) {
+            return a + b;
+        }
+        /*
+         *The function returns b subtracted from a.
+         * @param {number} a 1 argument.
+         * @param {number} b 2 argument.
+         * @returns {number} the function returns the subtracted b from a.
+         */
+        function subtraction(a, b) {
+            return a - b;
+        }
+        /*
+         * Division function.
+         * @param {number} a dividend.
+         * @param {number} b divider.
+         * @returns {number} the function returns the result of dividing a by b.
+         */
+        function division(a, b) {
+            return a / b;
+        }
+        /*
+         * Multiplication function.
+         * @param {number} a multiplicand.
+         * @param {number} b multiplier.
+         * @returns {number} the function returns result of multiplication a by b.
+         */
+        function multiplication(a, b) {
+            return a * b;
+        }
+
+        /* A function that takes two arguments and calls the operation function to be performed.
+         * @param {number} a 1st number.
+         * @param {number} b 2nd number.
+         * @param {string} operation.
+         * @returns returning an operation function.
+         */
+        function mathOperation(a, b, operation) {
+            switch (operation) {
+                case '+':
+                case 'addition': {
+                    alert(addition(a, b));
+                    break;
+                }
+                case '-':
+                case 'subtraction': {
+                    alert(subtraction(a, b));
+                    break;
+                }
+                case '/':
+                case 'division': {
+                    alert(division(a, b));
+                    break;
+                }
+                case '*':
+                case 'multiplication': {
+                    alert(multiplication(a, b));
+                    break;
+                }
+            }
+        }
+
+        let userData = [];
+        let temp = 1;
+        while (userData.length != 3) {
+            userData.push(prompt('Enter ' + temp + ' digit: '));
+            temp++;
+            switch (temp) {
+                case 3:
+                    userData.push(prompt('Enter the sign or name of the operation: '))
+                    break;
+            }
+        }
+
+        console.log(mathOperation(...userData));
+
+    </script>
+
+</body>
+
+</html>

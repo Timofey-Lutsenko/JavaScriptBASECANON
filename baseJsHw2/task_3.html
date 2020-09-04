@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+        let a = prompt("Введите первое число: ");
+        let b = prompt("Введите второе число: ");
+        if (a >= 0 && b >= 0) {
+            if (a - b < 0) {
+                ;
+                alert("Разность чисел: " + (b - a) + ".")
+            } else {
+                alert("Разность чисел: " + (a - b) + ".");
+            }
+        } else if (a < 0 && b < 0) {
+            alert("Произведение чисел: " + (a * b) + ".");
+        } else {
+            alert("Сумма чисел: " + (+a + +b) + ".")
+        }
+    </script>
+</body>
+
+</html>
