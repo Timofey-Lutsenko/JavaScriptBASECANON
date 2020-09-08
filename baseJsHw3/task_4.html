@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        "use strict"
+        /*
+         *The function returns the price including the discount.
+         * @param {number} Price without discount.
+         * @returns {number} Discounted price.
+         */
+        function discount(startPrice) {
+            return startPrice * 0.85;
+        }
+
+        const products = [{
+                id: 3,
+                price: 200,
+            },
+            {
+                id: 4,
+                price: 900,
+            },
+            {
+                id: 1,
+                price: 1000,
+            },
+        ];
+
+        products.forEach(item => console.log("Цена с учетом скидки: " + discount(item.price) + "."));
+        
+
+    </script>
+</body>
+
+</html>
