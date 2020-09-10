@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+
+        function Post(author, text, date) {
+            this.author = author;
+            this.text = text;
+            this.date = date;
+        }
+
+        Post.prototype.edit = function() {
+            this.text = prompt();
+        }
+
+        function AttachedPost(author, text, date, highlighted) {
+            Post.call(this, author, text, date);
+            this.highlighted = false;
+        }
+
+        AttachedPost.prototype = Object.create(Post.prototype);
+        AttachedPost.prototype.constructor = AttachedPost;
+
+        AttachedPost.prototype.makeTextHighlighted = function() {
+            this.highlighted = true;
+        }
+
+        const post1 = new Post('Bob', 'Text about es5', Date());
+        const post1A = new AttachedPost('Mike', 'Text about es5', Date());
+
+        console.log(post1);
+        console.log(post1A);
+        post1.edit();
+        post1A.edit();
+        console.log(post1);
+        console.log(post1A);
+        post1A.makeTextHighlighted();
+        console.log(post1A);
+
+
+        /* es6
+        class Post {
+            constructor(author, text, date) {
+                this.author = author;
+                this.text = text;
+                this.date = date;
+            }
+
+            edit() {
+                this.text = prompt();
+            }
+        }
+
+        class AttachedPost extends Post {
+            constructor(author, text, date, highlighted) {
+                super(author, text, date);
+                this.highlighted = highlighted;
+            }
+
+            makeTextHighlighted() {
+                this.highlighted = true;
+            }
+        }
+
+        const post1 = new Post('Bob', 'This is test text.', Date());
+        const post1A = new AttachedPost('Mike', 'Text about ES6', Date(), false);
+        post1.edit();
+        console.log(post1);
+        console.log(post1A);
+        post1A.makeTextHighlighted();
+        post1A.edit();
+        console.log(post1A);
+        
+        */
+
+    </script>
+</body>
+
+</html>
